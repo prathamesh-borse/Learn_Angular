@@ -23,9 +23,23 @@ import { FormsModule } from '@angular/forms';
     <ng-template #thenBlock>
         <h2>Then Block will be displayed, if displayName is true</h2>
     </ng-template>
+
+    <div [ngSwitch]="color">
+      <div *ngSwitchCase="'red'">You picked red color</div>
+      <div *ngSwitchCase="'blue'">You picked blue color</div>
+      <div *ngSwitchCase="'green'">You picked green color</div>
+      <div *ngSwitchDefault>Pick Again</div>
+    </div>
+
+    <div *ngFor="let color of colors; index as i">
+      <h2>{{i}} {{color}}</h2>
+    </div>
   `,
   styleUrl: './test.css'
 })
 export class Test {
+  public color = 'Orange';
+
+  public colors = ['Red', 'Blue', 'Green', 'Yellow', 'Black', 'White'];
   displayName = true
 }

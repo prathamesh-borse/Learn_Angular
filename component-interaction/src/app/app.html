@@ -1,0 +1,12 @@
+<main>
+  <div>
+    <h1>Hello, {{ title() }}</h1>
+    <div>
+      <app-test (childEvent)="message = $event" [parentData]="name"></app-test>
+      <!-- Receiving data from the test component using the childEvent -->
+      <!-- Passing data to the test component using the parentData the name is being send to the test component -->
+      <p>{{ message }}</p>
+      <!-- Message Event Generated from the test component -->
+    </div>
+  </div>
+</main>

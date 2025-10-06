@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "servicesInAngular": {
+    "angular-routing-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -19,8 +19,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/assets"
+              }
             ],
             "styles": [
               "src/styles.css"
@@ -59,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "servicesInAngular:build:production"
+              "buildTarget": "angular-routing-demo:build:production"
             },
             "development": {
-              "buildTarget": "servicesInAngular:build:development"
+              "buildTarget": "angular-routing-demo:build:development"
             }
           },
           "defaultConfiguration": "development"

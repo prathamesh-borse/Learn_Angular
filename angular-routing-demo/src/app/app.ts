@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
+import { EmployeeListComponent } from './employee-list-component/employee-list-component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, EmployeeListComponent],
   template: `
     <h1>Angular 20 Routing Demo</h1>
     <nav class="menu">
@@ -13,6 +14,7 @@ import { RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
       <a routerLink="/contact" routerLinkActive="active">Contact</a>
     </nav>
     <hr>
+    <app-employee-list-component></app-employee-list-component>
     <router-outlet></router-outlet>
   `,
   styles: [`

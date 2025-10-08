@@ -4,16 +4,16 @@ import { EmployeeListComponent } from './employee-list-component/employee-list-c
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, EmployeeListComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   template: `
           <h1>Angular 20 Route Params Demo</h1>
           <nav class="menu">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
             <a routerLink="/about" routerLinkActive="active">About</a>
             <a routerLink="/contact" routerLinkActive="active">Contact</a>
+            <a routerLink="/employees" routerLinkActive="active">Employees</a>
           </nav>
           <hr>
-          <app-employee-list-component></app-employee-list-component>
           <router-outlet></router-outlet>
       
     `,  

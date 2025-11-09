@@ -1,13 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-employee-detail-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterOutlet ,CommonModule],
   template: `
     <h2>Employee Detail</h2>
+
+    <router-outlet></router-outlet>
+
+    <p>
+      <button (click)="showOverview()">overview</button>
+      <button (click)="showContact()">contact</button>
+    </p>
+
     <p *ngIf="employeeId">Employee ID: {{ employeeId }}</p>
     <p *ngIf="!employeeId">No employee id</p>
 
@@ -39,6 +47,14 @@ export class EmployeeDetailComponent implements OnInit {
       route.paramMap.subscribe() → listens for changes.
     Use snapshot only if you know the route won’t change while the component is alive.
     */
+  }
+
+  showOverview() {
+    this.router.navigate(['overview'],{relativeTo: this.route})
+  }
+
+  showContact() {
+    this.router.navigate(['contact'],{relativeTo: this.route})
   }
 
   goPrevious() {
